@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="DESCRIPTION META TAG">
+  <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+  <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <!-- <meta property="og:image" content="static/image/1-1.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/> -->
+
+
+  <!-- <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG"> -->
+  <!-- <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG"> -->
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <!-- <meta name="twitter:image" content="static/images/your_twitter_banner_image.png"> -->
+  <!-- <meta name="twitter:card" content="summary_large_image"> -->
+  <!-- Keywords for your paper to be indexed by-->
+  <!-- <meta name="keywords" content="AdaptiveDiffusion"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+
+
+  <title>UR-Bench: A Benchmark for Multi-Hop Reasoning over Ultra–High-Resolution Images</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <style>
+    .layout-wrapper {
+      display: flex;
+      gap: 20px;
+      min-height: 500px;
+    }
+
+    .sidebar {
+        width: 170px;
+        background-color: #f1f1f1;
+        padding: 20px;
+    }
+    .sidebar ul {
+        list-style: none;
+    }
+    .sidebar li {
+        padding: 10px;
+        margin: 5px 0;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+    .sidebar li:hover {
+        background-color: #ddd;
+    }
+    .sidebar li.active {
+        background-color: #4CAF50;
+        color: white;
+    }
+    .content {
+        flex: 1;
+        padding: 10px;
+    }
+    .content-section {
+        display: none;
+    }
+    .content-section.active {
+        display: block;
+    }
+    .content img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title", style="font-size: 2.5rem">
+              <!-- <img src="static/images/apple-touch-icon.png" style="width: 40pt"> -->
+              UR-Bench: A Benchmark for Multi-Hop Reasoning over Ultra–High-Resolution Images
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <a href="" target="_blank">Siqi Li</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xinyu Cai</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Jianbiao Mei</a><sup>1,2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Nianchen Deng</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Pinlong Cai</a><sup>2</sup>,</span>
+              <br>
+                <span class="author-block">
+                <a href="" target="_blank">Licheng Wen</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Yufan Shen</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Xuemeng Yang</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Botian Shi</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="" target="_blank">Yong Liu</a><sup>1,📧</sup></span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <sup>1</sup>Zhejiang  University
+                  <sup>2</sup>Shanghai Artificial Intelligence Laboratory<br>
+                </span>
+                <span class="eql-cntrb" style="font-size:15pt"><br> <sup>📧</sup>Corresponding author</span>
+                <!-- <br>
+                <span class="eql-cntrb">luyt31415@mail.ustc.edu.cn, jkyuan22@m.fudan.edu.cn,
+                  chenzhibo@ustc.edu.cn, {zhangbo,gaopeng}@pjlab.org.cn</span> -->
+              </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+                         <!-- Arxiv PDF link -->
+                      <span class="link-block">
+                        <a href="" target="_blank"
+                        class="external-link button is-normal is-rounded is-dark">
+                        <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                        </span>
+                        <span>Arxiv (Coming Soon)</span>
+                      </a>
+                    </span>
+
+
+                  <!-- Github link -->
+                  <span class="link-block">
+                    <a href="https://knowledgexlab.github.io/UR-Bench/" target="_blank"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+
+              <span class="link-block">
+                <a href="" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fa fa-image"></i>
+                </span>
+                <span>Dataset (Coming Soon)</span>
+                </a>
+              </span>
+
+                <!-- ArXiv abstract Link -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <h4 class="subtitle">
+        🔥<span style="color: #ff3860">[NEW!]</span>
+        UR-Bench is a benchmark designed to evaluate the reasoning capabilities of MLLMs under extreme visual information! <br>
+        <!-- 🔥<span style="color: #ff3860">[NEW!]</span>
+        <a href="">Dataset</a> & <a href="">Code</a> have been released! -->
+      </h4>
+    </div>
+  </div>
+</section>
+
+
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container", style="max-width: 900px">
+       <div class="item">
+        <!-- <h2 class="subtitle has-text-centered", style="font-size: 1.5rem; font-weight: bolder">
+          Different prompts may require different steps of noise prediction!!!
+        </h2> -->
+        <!-- Your image here -->
+        <img src="static/images/1-1.png" alt="MY ALT TEXT"/>
+        <h2 class="subtitle has-text-centered", style="font-size: 1rem">
+          The overview of the UR-Bench: (a) Mean resolution (MP), file size (MB), and object count of high-resolution image benchmarks. (b) Two categories and four subsets of UR-Bench, with tasks organized across three difficulty levels.
+        </h2>
+      </div>
+  </div>
+</div>
+</section>
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent multimodal large language models (MLLMs) show strong capabilities in visual-language reasoning, yet their performance on ultra–high-resolution imagery remains largely unexplored. Existing visual question answering (VQA) benchmarks typically rely on medium-resolution data, offering limited visual complexity. To bridge this gap, we introduce Ultra-high-resolution Reasoning Benchmark (UR-Bench), a benchmark designed to evaluate the reasoning capabilities of MLLMs under extreme visual information. UR-Bench comprises two major categories—Humanistic Scenes and Natural Scenes—covering four subsets of ultra–high-resolution images with distinct spatial structures and data sources. Each subset contains images ranging from hundreds of megapixels to gigapixels, accompanied by questions organized into three levels, enabling evaluation of models’ reasoning capabilities in ultra–high-resolution scenarios.We further propose an agent-based framework in which a language model performs reasoning by invoking external visual tools. In addition, we introduce Semantic Abstraction and Retrieval tools that enable more efficient processing of ultra–high-resolution images.We evaluate state-of-the-art models using both an end-to-end MLLMs and our agent-based framework, demonstrating the effectiveness of our framework.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Paper Method -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div style="width: 90%;">
+        <h2 class="title is-3">UR-Bench</h2>
+        <div class="content has-text-justified">
+          <p style="font-size: 1.2rem; font-weight: bolder">
+            We introduce UR-Bench, a benchmark for ultra–high-resolution multi-hop reasoning, where individual image files range from several megabytes to over 1 GB and exhibit high information density. The benchmark incorporates three levels of reasoning complexity, enabling fine-grained evaluation under extreme visual conditions.
+         </p>
+         <p>
+           <img src="static/images/1-1.png" alt="MY ALT TEXT" style="margin-top: 15pt; width: 90%; margin-left: 5%;"/>
+           <h2 class="subtitle has-text-centered", style="font-size: 1rem; font-weight: 100;">
+            The overview of the UR-Bench: (a) Mean resolution (MP), file size (MB), and object count of high-resolution image benchmarks. (b) Two categories and four subsets of UR-Bench, with tasks organized across three difficulty levels.
+           </h2> 
+         </p>
+          <p style="font-size: 1.2rem; font-weight: bolder">
+             We propose an agent-based framework that enables LLMs to autonomously plan and coordinate tool-based operations. The framework emphasizes semantic decomposition of ultra-large-scale visual information through the Semantic Abstraction and Retrieval Tool, enabling efficient perception and reasoning over ultra–high-resolution images.
+          </p>
+          <p>
+            <img src="static/images/3-1.png" alt="MY ALT TEXT" style="margin-top: 15pt; width: 90%; margin-left: 5%;"/>
+            <h2 class="subtitle has-text-centered", style="font-size: 1rem; font-weight: 100;">
+              llustration of the agent-based framework for ultra-high-resolution image QA. The agent operates through natural-language reasoning and dynamically invokes external visual tools to handle large-scale images.
+            </h2> 
+          </p>
+          <p style="font-size: 1.2rem; font-weight: bolder; margin-top: 30pt">
+            We propose an automated data engine for generating multi-hop reasoning questions over ultra–high-resolution images, capable of automatically producing questions with varying levels of reasoning difficulty.
+          </p>
+          <p>
+            <img src="static/images/2-1.png" alt="MY ALT TEXT" style="margin-top: 15pt; width: 90%; margin-left: 5%;"/>
+            <h2 class="subtitle has-text-centered", style="font-size: 1rem; font-weight: 100;">
+              Overview of the data construction pipeline.
+            </h2> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Method -->
+
+
+<!-- Youtube video -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container"> -->
+      <!-- Paper video. -->
+      <!-- <h2 class="title is-3">Video Presentation</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video"> -->
+            <!-- Youtube embed code here -->
+            <!-- <iframe src="static/images/Dolphin_video_720.mp4" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen autoplay></iframe> -->
+            <!-- <video width="640" height="360" autoplay mute loop controls>
+              <source src="static/images/Dolphin_video_720.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End youtube video -->
+
+<!-- Paper Experiment -->
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div style="width: 90%;">
+        <h2 class="title is-3">Experiments</h2>
+        <div class="content has-text-justified">
+          <p>
+            <img src="static/images/5-1.jpg" alt="MY ALT TEXT" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+          <h2 class="subtitle has-text-centered", style="font-size: 1rem; font-weight: 100">
+            Accuracy scores on the UR-Bench. The results encompass end-to-end evaluations of both closed-source and open-source MLLMs, as well as the performance of our proposed agent framework equipped with different decision models.
+          </h2> 
+          </p>
+          <p>
+            <img src="static/images/4-1.png" alt="MY ALT TEXT" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+            <h2 class="subtitle has-text-centered", style="font-size: 1rem; font-weight: 100">
+              A case from our agent framework under the Humanistic Scenes-Portrait Scrolls subset.
+            </h2> 
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper Experiment -->
+
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <h2 class="title is-3" style="justify-self: center">Rule Them All!</h2>
+    <div class="container", style="max-width: 1200px">
+      <div class="layout-wrapper">
+      <div class="sidebar">
+        <ul>
+            <li class="active" data-section="section1">Natural Image</li>
+            <li data-section="section2">Table</li>
+            <li data-section="section3">Chart</li>
+            <li data-section="section4">Flow Chart</li>
+            <li data-section="section5">Poster</li>
+            <li data-section="section6">Equation</li>
+            <li data-section="section7">Geometry</li>
+            <li data-section="section8">UI</li>
+            <li data-section="section9">PDF</li>
+            <li data-section="section10">Video</li>
+        </ul>
+    </div>
+    <div class="content">
+      <div id="section1" class="content-section active">
+        <img src="static/images/natural_img.png" alt="Natural Image" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+      
+      <div id="section2" class="content-section">
+        <img src="static/images/table.png" alt="Table" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+      
+      <div id="section3" class="content-section">
+        <img src="static/images/chart.png" alt="Chart" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+      
+      <div id="section4" class="content-section">
+        <img src="static/images/flowchart.png" alt="Flow Chart" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section5" class="content-section">
+        <img src="static/images/poster.png" alt="Poster" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section6" class="content-section">
+        <img src="static/images/equation.png" alt="Equation" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section7" class="content-section">
+        <img src="static/images/geo.png" alt="Geometry" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section8" class="content-section">
+        <img src="static/images/ui.png" alt="UI" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section9" class="content-section">
+        <img src="static/images/pdf.png" alt="PDF" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+
+      <div id="section10" class="content-section">
+        <img src="static/images/video.png" alt="Video" style="margin-top: 20pt; width: 90%; margin-left: 5%;"/>
+      </div>
+  </div>
+  </div>
+</div>
+</div>
+<script>
+  document.querySelectorAll('.sidebar li').forEach(item => {
+      item.addEventListener('click', function() {
+          // 移除所有活动状态
+          document.querySelectorAll('.sidebar li').forEach(i => i.classList.remove('active'));
+          document.querySelectorAll('.content-section').forEach(section => section.classList.remove('active'));
+          
+          // 添加新的活动状态
+          this.classList.add('active');
+          const sectionId = this.getAttribute('data-section');
+          document.getElementById(sectionId).classList.add('active');
+      });
+  });
+</script>
+</section> -->
+
+<!-- Video carousel -->
+<!-- <section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title is-3">Another Carousel</h2>
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-video1">
+          <video poster="" id="video1" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel1.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video2">
+          <video poster="" id="video2" autoplay controls muted loop height="100%"> -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel2.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-video3">
+          <video poster="" id="video3" autoplay controls muted loop height="100%">\ -->
+            <!-- Your video file here -->
+            <!-- <source src="static/videos/carousel3.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End video carousel -->
+
+
+
+
+
+
+<!-- Paper poster -->
+<!-- <section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container">
+      <h2 class="title">Poster</h2>
+
+      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
+          </iframe>
+        
+      </div>
+    </div>
+  </section> -->
+<!--End paper poster -->
+
+
+<!--BibTex citation -->
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code> -->
+        <!-- @article{ye2024training,
+          title={Training-Free Adaptive Diffusion with Bounded Difference Approximation Strategy},
+          author={Ye, Hancheng and Yuan, Jiakang and Xia, Renqiu and Yan, Xiangchao and Chen, Tao and Yan, Junchi and Shi, Botian and Zhang, Bo},
+          journal={Advances in Neural Information Processing Systems},
+          volume={36},
+          year={2024}
+        } -->
+      <!-- </code></pre>
+    </div>
+</section> -->
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
